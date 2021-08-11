@@ -1,17 +1,26 @@
 // for loop
-for(let i = 0;i < 5; i++){
-    console.log(i)
+let i
+for(i=2;i<=6;i+=2){
+    console.log('loop index: ',i)
 }
+// for(let i = 0;i < 5; i++){
+//     console.log(i)
+// }
 
 const names = ['code','ketpar','learn']
-for(let i=0;i<names.length;i++){
-    // console.log(names[i])
-    let html = `<div>${names[i]}</div>`
-    console.log(html)
-}
+
+// for(i=0;i<names.length;i++){
+//     console.log(`names at index : ${i}, ${names[i]}`)
+// }
+
+// for(let i=0;i<names.length;i++){
+//     // console.log(names[i])
+//     let html = `<div>${names[i]}</div>`
+//     console.log(html)
+// }
 
 // while loop
-let i=0
+i=0
 while (i< 5){
     console.log(i)
     i++
@@ -22,7 +31,9 @@ while(i<names.length){
     i++
 }
 
-i = 0
+i = 5 
+// do while loop
+
 do{
     console.log('val of i :',i)
     i++
@@ -32,43 +43,44 @@ do{
 // if statement 
 age = 35
 if (age > 20){
-    console.log('you are 20 year old')
+    console.log('you are more than 20 year old')
 }
 
-if (names.length > 2){
+if (names.length < 2){
     console.log("lot of names")
 }
 
-// let password = "pass"
-// if (password.length >=12 && password.includes('@') ){ // 12 char long
+// let password = "pass@"
 
+// if (password.length >= 12 && password.includes('@') ){ // 12 char long
+//     console.log('password is 12 char long and strong')
 // } else if( password.length >= 8 || password.includes('@') && password.length > 5 ) { // 8 char long
- 
+//     console.log('password is 8 char long and strong ')
 // } else{
-
+//     console.log('password is week')
 // }
 
 
 // logical not
-let user = false;
-if(!user){
-    console.log('you can log in ')
-}
+// let user = false;
+// if(!user){
+//     console.log('you can log in ')
+// }
 // console.log(!true)
 // console.log(!false)
 
 // break and continue
-const scores = [50,25,0,30,100,20,10]
-for(let i=0;i<scores.length;i++){
-    if(scores[i] === 0){
-        continue
-    }
-    console.log('your score :' , scores[i])
-    if (scores[i] > 50){
-        console.log("you are passed")
-        break
-    }
-}
+// const scores = [50,25,0,30,100,20,10]
+// for(let i=0;i<scores.length;i++){
+//     if(scores[i] === 0){
+//         continue
+//     }
+//     console.log('your score :' , scores[i])
+//     if (scores[i] > 50){
+//         console.log("you are passed")
+//         break
+//     }
+// }
 
 //switch statement
 const grade = 'D' // this is working as a === not type conversion
@@ -82,12 +94,15 @@ switch (grade) {
     case 'C':
         console.log("grade is C")
         break;
+    case 'D':
+        console.log('grade is D')
+        break;
     default:
         console.log('not invalid')
         break;
 }
 
-// variable & block scope
+// // variable & block scope (let have a scope but var don't have)
 let marks = 50
 //global scope
 if(true){ // local scope
