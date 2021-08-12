@@ -67,3 +67,22 @@ console.log(Math.round(random*100))
 // 1. premitive type -> [number,string,boolean,null,undefined,symbols] -> store in stack -> small space
 // 2. reference type -> [object,object literals,arrays,functions,dates,all other object] -> store in heap -> big memory
       
+// premitive type example
+let marksOne = 70
+let marksTwo = marksOne
+console.log(`marksOne: ${marksOne} , marksTwo:${marksTwo}`)
+
+marksOne = 100
+console.log(`marksOne: ${marksOne} , marksTwo:${marksTwo}`)
+
+
+
+// reference object example
+
+const userOne = {name:'code',location:'palanpur'}
+const userTwo = userOne
+
+console.log(userOne,userTwo)
+
+userOne.location = 'chennai'
+console.log(userOne,userTwo)
