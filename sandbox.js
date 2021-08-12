@@ -1,135 +1,69 @@
+// objects 
+// const hobbies = [ 
+//     { hobby:'cricket', interest:10},
+//     { hobby:'football', interest:8},
+//     { hobby:'gymnastic', interest:10}
+// ]
 
-// // function on object
+let user = {
+    name : 'Coding king',
+    age : 23,
+    location : 'palanpur',
+    email : 'pc.koder@gmail.com',
+    hobbies : [
+        { hobby:'cricket', interest:10},
+        { hobby:'football', interest:8},
+        { hobby:'gymnastic', interest:10}
+    ],
+    login : function() {
+        console.log('the user is logged in')
+    },
+    logout: function() {
+        console.log('the user is logged out')
+    },
+    logHobbies : function(){ // if use arrow function JS does not chage value of this object
+        // console.log(this)                        // this is context object 
+        this.hobbies.forEach(blog => {
+            console.log(blog.hobby,blog.interest)
+        })
+    }
 
-// // function declaration
-// // function greet(){
-// //     console.log("hello!")
-// // }
+}
 
-// //function expression
-// // const sound = function(){ 
-// //     console.log("have a great day!")
-// // }
+user.logHobbies() // only for that object 
+console.log(this) // global window object
+user.login()
+const name = 'paras'
 
-// greet()
-// greet()
-// greet()
-// // sound()
-// // sound()
-// // sound()
+// // dot notation 
+// console.log(user)
+// console.log(user.name)
+// console.log(user['name'])
+// user['name'] = 'code-hash'
+// console.log(user.name)
 
-// // function declaration - javascript hoisting -Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope 
-// function greet(){
-//     console.log("hello!")
-// }
+// // bracket notation
+// const key = 'location'
+// console.log(user[key])
 
-// //function expression - hoisting not working with FE
-// // const sound = function(){ 
-// //     console.log("have a great day!")
-// // }
+// // type
+// console.log(typeof user)
 
+// Math object
+console.log(Math.PI)
+console.log(Math.E)
 
-// // arguments and parameters
-// const sound = function(name='xyz',time='night'){  //local variable
-//     console.log(`have a great day!\ngood ${time}, ${name}`)
-// }
+const area = 7.7
+console.log(Math.round(area))
+console.log(Math.floor(area))
+console.log(Math.ceil(area))
+console.log(Math.trunc(area))
 
-// sound('paras','morning') // function with argument
-// sound()
+// random number
+const random = Math.random()
+console.log(Math.round(random*100))
 
-// // returning value function
-// // const calArea = function(radius){
-// //     let area = 3.14*radius**2;
-// //     // console.log(area)
-// //     return area
-// // }
-
-// // const area = calArea(5)
-// // console.log(area)
-
-// // arrow function
-// // const calArea = (radius) => { //excetly one parameter no need parenthesis
-// //     return 3.14*radius**2;
-// // }
-
-// // shorthand of arrow function
-// const calArea = radius => 3.14*radius**2
-// const area = calArea(5)
-// console.log('area is : ',area)
-
-
-// //practice arrow function 
-// const welcome = function(){
-//     return "hello world"
-// }
-// console.log(welcome())
-
-// const total_bill = function(items,GST){
-//     let total = 0
-//     for(i=0;i<items.length;i++){
-//         total += items[i] + items[i]*GST
-//     }
-//     return total
-// }
-
-// console.log(total_bill([10,20,40,50],10))
-
-// // const total_bill = (items,GST) => {
-// //     let total = 0
-// //     for(i=0;i<items.length;i++){
-// //         total += items[i] + items[i]*GST
-// //     }
-// //     return total
-// // }
-
-// const name_ = 'ketpar'
-
-// //functions - it's own 
-// const msg = () => 'good bye'
-// console.log(msg)
-
-// //methods - related to objects datatype
-
-// console.log(name_.toUpperCase())
-
-// // call backs & foreach 
-// const myFunc = (callBackFunc) => {
-//     let value = 50
-//     callBackFunc(value)
-// }
-
-// // myFunc(function(value){
-// //     console.log(value)
-// // })
-
-// myFunc(value => {
-//     console.log(value)
-// })
-
-// let people = ['paras','ramesh','paresh','smith','ketpar']
-
-// // people.forEach(function(person){
-// //     console.log(person)
-// // })
-
-// const logPerson = (person,index)=>{
-//     console.log(`${index} - hello ${person}`)
-// }
-
-// people.forEach(logPerson)
-
-// // people.forEach((person,index) => {
-// //     console.log(index,person)
-// // })
-
-// // get reference to the 'ul'
-
-// const ul = document.querySelector('.people')
-
-// let html = ``
-// const list = ['khaman','cloths','body sprey','biscuits']
-// list.forEach( person => {
-//     html += `<li style="color:purple"> ${person} </li>`
-// })
-// console.log(html)
-// ul.innerHTML = html
+// premitive types & reference types
+// 1. premitive type -> [number,string,boolean,null,undefined,symbols] -> store in stack -> small space
+// 2. reference type -> [object,object literals,arrays,functions,dates,all other object] -> store in heap -> big memory
+      
