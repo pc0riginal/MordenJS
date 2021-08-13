@@ -1,88 +1,103 @@
-// objects 
-// const hobbies = [ 
-//     { hobby:'cricket', interest:10},
-//     { hobby:'football', interest:8},
-//     { hobby:'gymnastic', interest:10}
-// ]
+// // Document Object Model (DOM)
+// // add , change, & delete content
+// // pop-up effect
 
-let user = {
-    name : 'Coding king',
-    age : 23,
-    location : 'palanpur',
-    email : 'pc.koder@gmail.com',
-    hobbies : [
-        { hobby:'cricket', interest:10},
-        { hobby:'football', interest:8},
-        { hobby:'gymnastic', interest:10}
-    ],
-    login : function() {
-        console.log('the user is logged in')
-    },
-    logout: function() {
-        console.log('the user is logged out')
-    },
-    logHobbies : function(){ // if use arrow function JS does not chage value of this object
-        // console.log(this)                        // this is context object 
-        this.hobbies.forEach(blog => {
-            console.log(blog.hobby,blog.interest)
-        })
+// // const para = document.querySelector('p')
+// // const p_error = document.querySelector('.error')
+// // const div_error = document.querySelector('div.error')
+
+// // console.log(para)
+// // console.log(p_error)
+// // console.log(div_error)
+
+// const p = document.querySelectorAll('p')
+
+// // p.forEach(pt => {
+// //     console.log(pt)
+// // })
+// console.log(p[1])
+// // const error = document.querySelectorAll('.error') //return nodelist object can use as for each
+// // console.log(error)
+
+// // get an element by ID
+// const title = document.getElementById('page-title') 
+// console.log(title)
+
+// // get element by class 
+// const error = document.getElementsByClassName('error') // return html collection can not use for each method
+// console.log(error)
+// console.log(error[0])
+
+// // get element by tag name
+// const paras = document.getElementsByTagName('p')
+// console.log(paras)
+// console.log(paras[1])
+
+
+// const para =document.querySelector('p')
+// console.log(para.innerText)
+// para.innerText = 'code is fun'
+
+// const paras = document.querySelectorAll('p')
+
+// paras.forEach(para => {
+//     console.log(para.innerText)
+//     para.innerText += ' learn'
+// })
+
+// const content = document.querySelector('.content')
+// content.innerHTML = `<h2>This is changed by JS</h2>`
+
+// const colors = ['black','white','green','blue','pink']
+// colors.forEach(color => {
+//     content.innerHTML += `<p>${color}</p>`
+// })
+
+// const link = document.querySelector('a')
+// console.log(link.getAttribute('href'))
+// link.setAttribute('href','https://www.google.com')
+// link.innerText = 'Google Site'
+
+// const e = document.querySelector('div.error')
+// console.log(e.getAttribute('class'))
+// e.setAttribute('class','success')
+// e.setAttribute('style','color:green;')
+
+// const title = document.querySelector('h1')
+// title.setAttribute('style','margin:50px')
+// console.log(title.style)
+// console.log(title.style.color)
+// title.style.margin = '50px'
+// title.style.color = 'orange'
+// title.style.fontSize = '50px'
+// title.style.margin = ''
+
+// change class 
+// const status = document.querySelector('h5')
+
+// console.log(status.classList)
+// status.classList.add('success')
+// status.classList.remove('success')
+// status.classList.add('error')
+
+const challenge = document.querySelectorAll('.challenge > p')
+console.log(challenge)
+challenge.forEach(e => {
+    // console.log(e)
+    // let s = String(e.innerText)
+    // innerText is only grab visible content 
+    // textContent is also grab hidden content
+    if (e.textContent.includes('error')){
+        e.classList.add('error')
+    } else{
+        e.classList.add('success')
     }
 
+})
+
+const title = document.querySelector('.title')
+
+const toggle = () => {
+    title.classList.toggle('title')
 }
-
-user.logHobbies() // only for that object 
-console.log(this) // global window object
-user.login()
-const name = 'paras'
-
-// // dot notation 
-// console.log(user)
-// console.log(user.name)
-// console.log(user['name'])
-// user['name'] = 'code-hash'
-// console.log(user.name)
-
-// // bracket notation
-// const key = 'location'
-// console.log(user[key])
-
-// // type
-// console.log(typeof user)
-
-// Math object
-console.log(Math.PI)
-console.log(Math.E)
-
-const area = 7.7
-console.log(Math.round(area))
-console.log(Math.floor(area))
-console.log(Math.ceil(area))
-console.log(Math.trunc(area))
-
-// random number
-const random = Math.random()
-console.log(Math.round(random*100))
-
-// premitive types & reference types
-// 1. premitive type -> [number,string,boolean,null,undefined,symbols] -> store in stack -> small space
-// 2. reference type -> [object,object literals,arrays,functions,dates,all other object] -> store in heap -> big memory
-      
-// premitive type example
-let marksOne = 70
-let marksTwo = marksOne
-console.log(`marksOne: ${marksOne} , marksTwo:${marksTwo}`)
-
-marksOne = 100
-console.log(`marksOne: ${marksOne} , marksTwo:${marksTwo}`)
-
-
-
-// reference object example
-
-const userOne = {name:'code',location:'palanpur'}
-const userTwo = userOne
-
-console.log(userOne,userTwo)
-
-userOne.location = 'chennai'
-console.log(userOne,userTwo)
+// title.classList.toggle('test')
